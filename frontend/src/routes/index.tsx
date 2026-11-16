@@ -56,13 +56,13 @@ export const AppRoutes: React.FC = () => {
     <Routes>
       {/* Public Routes */}
       <Route path="/" element={<LandingPage />} />
-      <Route
-        path="/login"
+      <Route 
+        path="/login" 
         element={
-          isAuthenticated
-            ? <Navigate to={getRoleLandingRoute(user?.role)} replace />
+          isAuthenticated 
+            ? <Navigate to={getRoleLandingRoute(user?.role)} replace /> 
             : <LoginPage />
-        }
+        } 
       />
       <Route path="/unauthorized" element={<UnauthorizedPage />} />
 
@@ -72,269 +72,269 @@ export const AppRoutes: React.FC = () => {
           <Route path="dashboard" element={<Navigate to="/overview" replace />} />
 
           {/* Overview */}
-          <Route
-            path="overview"
+          <Route 
+            path="overview" 
             element={
               <PermissionGuard requiredPermission="VIEW_OVERVIEW">
                 <OverviewPage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* Projects */}
-          <Route
-            path="projects"
+          <Route 
+            path="projects" 
             element={
               <PermissionGuard requiredPermission="VIEW_PROJECTS">
                 <ProjectsPage />
               </PermissionGuard>
-            }
+            } 
           />
-          <Route
-            path="projects/:id"
+          <Route 
+            path="projects/:id" 
             element={
               <PermissionGuard requiredPermission="VIEW_PROJECTS">
                 <ProjectDetailPage />
               </PermissionGuard>
-            }
+            } 
           />
-          <Route
-            path="projects/:id/activity"
+          <Route 
+            path="projects/:id/activity" 
             element={
               <PermissionGuard requiredPermission="VIEW_PROJECTS">
                 <ProjectActivityPage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* Work Zones */}
-          <Route
-            path="work-zones"
+          <Route 
+            path="work-zones" 
             element={
               <PermissionGuard requiredPermission="VIEW_WORK_ZONES">
                 <WorkZonesPage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* Work Allocation Ledger & Creation */}
-          <Route
-            path="work-allocation"
+          <Route 
+            path="work-allocation" 
             element={
               <PermissionGuard requiredPermission="VIEW_ASSIGNED_WORK">
                 <WorkAllocationPage />
               </PermissionGuard>
-            }
+            } 
           />
-          <Route
-            path="work-allocation/:id"
+          <Route 
+            path="work-allocation/:id" 
             element={
               <PermissionGuard requiredPermission="VIEW_ASSIGNED_WORK">
                 <WorkAssignmentDetailPage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* Stage 6 Work Type Dependencies */}
-          <Route
-            path="work-dependencies"
+          <Route 
+            path="work-dependencies" 
             element={
               <PermissionGuard requiredPermission="DEPENDENCY_VIEW">
                 <WorkDependenciesPage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* Vendor Portal: My Work Orders */}
-          <Route
-            path="my-work"
+          <Route 
+            path="my-work" 
             element={
               <PermissionGuard requiredPermission="VIEW_ASSIGNED_WORK">
                 <VendorWorkPage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* Vendors */}
-          <Route
-            path="vendors"
+          <Route 
+            path="vendors" 
             element={
               <PermissionGuard requiredPermission="VENDOR_VIEW">
                 <VendorsPage />
               </PermissionGuard>
-            }
+            } 
           />
-          <Route
-            path="vendors/:id"
+          <Route 
+            path="vendors/:id" 
             element={
               <PermissionGuard requiredPermission="VENDOR_VIEW">
                 <VendorDetailPage />
               </PermissionGuard>
-            }
+            } 
           />
-          <Route
-            path="vendors/:id/activity"
+          <Route 
+            path="vendors/:id/activity" 
             element={
               <PermissionGuard requiredPermission="VIEW_ASSIGNED_WORK">
                 <VendorActivityPage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* WorkerTrust Workforce Management & Site Safety */}
-          <Route
-            path="workertrust"
+          <Route 
+            path="workertrust" 
             element={
               <PermissionGuard requiredPermission="WORKER_VIEW">
                 <WorkerTrustDashboardPage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* Quality Inspection */}
-          <Route
-            path="quality-inspection"
+          <Route 
+            path="quality-inspection" 
             element={
               <PermissionGuard requiredPermission="REVIEW_EVIDENCE">
                 <QualityInspectionPage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* Stage 11: Human Review Queue & Inspection Workspace */}
-          <Route
-            path="human-review"
+          <Route 
+            path="human-review" 
             element={
               <PermissionGuard requiredPermission="REVIEW_EVIDENCE">
                 <HumanReviewQueuePage />
               </PermissionGuard>
-            }
+            } 
           />
-          <Route
-            path="human-review/:reviewId"
+          <Route 
+            path="human-review/:reviewId" 
             element={
               <PermissionGuard requiredPermission="REVIEW_EVIDENCE">
                 <InspectionWorkspacePage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* Stage 11: Corrective Actions */}
-          <Route
-            path="corrective-actions"
+          <Route 
+            path="corrective-actions" 
             element={
               <PermissionGuard requiredPermission="REVIEW_EVIDENCE">
                 <CorrectiveActionsPage />
               </PermissionGuard>
-            }
+            } 
           />
-          <Route
-            path="my-corrective-actions"
+          <Route 
+            path="my-corrective-actions" 
             element={
               <PermissionGuard requiredPermission="VIEW_ASSIGNED_WORK">
                 <VendorCorrectiveActionsPage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* Evidence Center */}
-          <Route
-            path="evidence"
+          <Route 
+            path="evidence" 
             element={
               <PermissionGuard requiredPermission="SUBMIT_EVIDENCE">
                 <EvidencePage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* Milestones & Payments */}
-          <Route
-            path="milestones"
+          <Route 
+            path="milestones" 
             element={
               <PermissionGuard requiredPermission="VIEW_MILESTONES">
                 <MilestonesPage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* Analytics Hub */}
-          <Route
-            path="analytics"
+          <Route 
+            path="analytics" 
             element={
               <PermissionGuard requiredPermission="VIEW_ANALYTICS">
                 <AnalyticsPage />
               </PermissionGuard>
-            }
+            } 
           />
-          <Route
-            path="analytics/vendors"
+          <Route 
+            path="analytics/vendors" 
             element={
               <PermissionGuard requiredPermission="VIEW_ANALYTICS">
                 <VendorAnalyticsDirectoryPage />
               </PermissionGuard>
-            }
+            } 
           />
-          <Route
-            path="analytics/vendors/:id"
+          <Route 
+            path="analytics/vendors/:id" 
             element={
               <PermissionGuard requiredPermission="VIEW_ANALYTICS">
                 <VendorPerformanceDetailPage />
               </PermissionGuard>
-            }
+            } 
           />
-          <Route
-            path="analytics/vendor-comparison"
+          <Route 
+            path="analytics/vendor-comparison" 
             element={
               <PermissionGuard requiredPermission="VIEW_ANALYTICS">
                 <VendorComparisonPage />
               </PermissionGuard>
-            }
+            } 
           />
-          <Route
-            path="analytics/projects"
+          <Route 
+            path="analytics/projects" 
             element={
               <PermissionGuard requiredPermission="VIEW_ANALYTICS">
                 <ProjectAnalyticsPage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* Audit Trail & Logs */}
-          <Route
-            path="audit-trail"
+          <Route 
+            path="audit-trail" 
             element={
               <PermissionGuard requiredPermission="VIEW_AUDIT_TRAIL">
                 <AuditTrailPage />
               </PermissionGuard>
-            }
+            } 
           />
-          <Route
-            path="audit-logs"
+          <Route 
+            path="audit-logs" 
             element={
               <PermissionGuard requiredPermission="VIEW_AUDIT_TRAIL">
                 <AuditTrailPage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* Reports Export */}
-          <Route
-            path="reports"
+          <Route 
+            path="reports" 
             element={
               <PermissionGuard requiredPermission="EXPORT_REPORTS">
                 <ReportsPage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* User Management (Platform Admin Only) */}
-          <Route
-            path="users"
+          <Route 
+            path="users" 
             element={
               <PermissionGuard requiredPermission="MANAGE_USERS">
                 <UserManagementPage />
               </PermissionGuard>
-            }
+            } 
           />
 
           {/* Operator Profile */}
