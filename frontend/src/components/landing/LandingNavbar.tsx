@@ -48,7 +48,7 @@ export const LandingNavbar: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#0B1928]/90 backdrop-blur-md border-b border-slate-800/80 transition-all">
+    <header className="sticky top-0 z-50 bg-[#0B1928]/95 backdrop-blur-md border-b border-[#13A89E]/20 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand Logo */}
         <a href="#top" className="flex items-center gap-2 group transition-opacity hover:opacity-95">
@@ -61,7 +61,7 @@ export const LandingNavbar: React.FC = () => {
             <a
               key={link.label}
               href={link.href}
-              className="text-xs font-medium text-slate-300 hover:text-teal-400 px-2.5 py-1.5 rounded-md hover:bg-slate-800/60 transition-colors"
+              className="text-xs font-medium text-[#AAB8C8] hover:text-[#14B8A6] px-2.5 py-1.5 rounded-md hover:bg-[#10243A] transition-colors"
             >
               {link.label}
             </a>
@@ -71,15 +71,15 @@ export const LandingNavbar: React.FC = () => {
         {/* Right Action Buttons */}
         <div className="hidden sm:flex items-center gap-3">
           {/* Status Indicator Pill */}
-          <div className="flex items-center gap-1.5 text-[11px] font-mono text-teal-400 bg-teal-950/60 border border-teal-800/50 px-2.5 py-1 rounded-full">
-            <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse"></span>
+          <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#14B8A6] bg-[#10243A] border border-[#13A89E]/30 px-2.5 py-1 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#13A89E] animate-pulse"></span>
             <span>Platform Online</span>
           </div>
 
           {isAuthenticated ? (
             <Link
               to={consoleRoute}
-              className="inline-flex items-center gap-2 text-xs font-semibold text-slate-900 bg-teal-400 hover:bg-teal-300 px-4 py-2 rounded-lg shadow-sm transition-all hover:shadow-teal-500/20"
+              className="inline-flex items-center gap-2 text-xs font-bold text-[#0B1928] bg-[#13A89E] hover:bg-[#14B8A6] px-4 py-2 rounded-lg shadow-sm transition-all hover:shadow-[#13A89E]/25"
             >
               <span>Go to Console</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -88,13 +88,13 @@ export const LandingNavbar: React.FC = () => {
             <>
               <Link
                 to="/login"
-                className="text-xs font-medium text-slate-300 hover:text-white px-3 py-1.5 rounded-md hover:bg-slate-800/60 transition-colors"
+                className="text-xs font-semibold text-[#F8FAFC] hover:text-[#14B8A6] px-3.5 py-2 rounded-lg border border-slate-700 hover:border-[#13A89E]/50 bg-[#10243A]/80 transition-colors"
               >
                 Sign In
               </Link>
               <Link
                 to="/login"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-500 hover:to-teal-400 px-3.5 py-2 rounded-lg shadow-sm transition-all shadow-teal-900/30"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B1928] bg-[#13A89E] hover:bg-[#14B8A6] px-4 py-2 rounded-lg shadow-md shadow-[#13A89E]/20 transition-all"
               >
                 <span>Launch Console</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -108,14 +108,14 @@ export const LandingNavbar: React.FC = () => {
           {isAuthenticated ? (
             <Link
               to={consoleRoute}
-              className="text-xs font-semibold text-slate-900 bg-teal-400 px-3 py-1.5 rounded-md"
+              className="text-xs font-bold text-[#0B1928] bg-[#13A89E] px-3 py-1.5 rounded-md"
             >
               Console
             </Link>
           ) : (
             <Link
               to="/login"
-              className="text-xs font-semibold text-white bg-teal-600 px-3 py-1.5 rounded-md"
+              className="text-xs font-bold text-[#0B1928] bg-[#13A89E] px-3 py-1.5 rounded-md"
             >
               Sign In
             </Link>
@@ -123,7 +123,7 @@ export const LandingNavbar: React.FC = () => {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-slate-400 hover:text-white hover:bg-slate-800/60 rounded-lg transition-colors"
+            className="p-2 text-[#AAB8C8] hover:text-white hover:bg-[#10243A] rounded-lg transition-colors"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -141,19 +141,19 @@ export const LandingNavbar: React.FC = () => {
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center gap-2.5 text-xs font-medium text-slate-300 hover:text-teal-400 px-3 py-2 rounded-lg hover:bg-slate-800/70"
+                className="flex items-center gap-2.5 text-xs font-medium text-[#AAB8C8] hover:text-[#14B8A6] px-3 py-2 rounded-lg hover:bg-[#10243A]"
               >
-                <Icon className="w-4 h-4 text-teal-400" />
+                <Icon className="w-4 h-4 text-[#13A89E]" />
                 <span>{link.label}</span>
               </a>
             );
           })}
-          <div className="pt-3 border-t border-slate-800/80 flex flex-col gap-2">
+          <div className="pt-3 border-t border-slate-800 flex flex-col gap-2">
             {isAuthenticated ? (
               <Link
                 to={consoleRoute}
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-2.5 text-xs font-semibold text-slate-900 bg-teal-400 rounded-lg"
+                className="w-full text-center py-2.5 text-xs font-bold text-[#0B1928] bg-[#13A89E] rounded-lg"
               >
                 Go to Console ({user?.role || 'Operator'})
               </Link>
@@ -161,7 +161,7 @@ export const LandingNavbar: React.FC = () => {
               <Link
                 to="/login"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-2.5 text-xs font-semibold text-white bg-teal-600 hover:bg-teal-500 rounded-lg"
+                className="w-full text-center py-2.5 text-xs font-bold text-[#0B1928] bg-[#13A89E] hover:bg-[#14B8A6] rounded-lg"
               >
                 Launch Console
               </Link>
