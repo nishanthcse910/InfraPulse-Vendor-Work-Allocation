@@ -31,6 +31,7 @@ import { WorkerTrustDashboardPage } from '../pages/workertrust/WorkerTrustDashbo
 import { UserManagementPage } from '../pages/UserManagementPage';
 import { ProfilePage } from '../pages/ProfilePage';
 import { LoginPage } from '../pages/LoginPage';
+import { LandingPage } from '../pages/LandingPage';
 import { UnauthorizedPage } from '../pages/UnauthorizedPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
 import { ProtectedRoute } from '../auth/ProtectedRoute';
@@ -54,6 +55,7 @@ export const AppRoutes: React.FC = () => {
   return (
     <Routes>
       {/* Public Routes */}
+      <Route path="/" element={<LandingPage />} />
       <Route 
         path="/login" 
         element={
@@ -67,7 +69,7 @@ export const AppRoutes: React.FC = () => {
       {/* Protected Routes */}
       <Route element={<ProtectedRoute />}>
         <Route element={<DashboardLayout />}>
-          <Route index element={<Navigate to="/overview" replace />} />
+          <Route path="dashboard" element={<Navigate to="/overview" replace />} />
 
           {/* Overview */}
           <Route 
